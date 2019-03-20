@@ -17,7 +17,7 @@
   function testNoteListViewHasList() {
     var noteListView = new NoteListView();
 
-    if (noteListView.notelist instanceof NoteList) {
+    if (noteListView.noteList instanceof NoteList) {
       console.log("testNoteListViewHasList: Yep, contains an instance!");
     }
     else {
@@ -28,16 +28,15 @@
 })(this);
 
 
-// (function(exports) {
-//   function testStringHtml() {
-//     var noteListView = new NoteListView();
-//     noteListView.notelist.create('text')
-//     if (noteListView.html().includes('<ul><li><div> text </div></li></ul>')) {
-//       console.log("testStringHtml: Yep, contains a string of HTML!");
-//     }
-//     else {
-//       throw new Error("testStringHtml Error:Doesn't return string of HTML")
-//     }
-//   };
-//   testStringHtml();
-// })(this);
+(function(exports) {
+  function testStringHtml() {
+    var noteListView = new NoteListView();
+    noteListView.noteList.create('text')
+    if (noteListView.html() == '<ul><li>text</li></ul>') {
+      console.log("testStringHtml: Yep, contains a string of HTML!");
+    } else {
+      throw new Error("testStringHtml Error:Doesn't return string of HTML")
+    }
+  };
+  testStringHtml();
+})(this);
